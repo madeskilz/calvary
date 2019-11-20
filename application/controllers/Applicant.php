@@ -403,6 +403,7 @@ class Applicant extends CI_Controller
         $data['firstname'] = cleanit($this->input->post('firstname'));
         $data['lastname'] = cleanit($this->input->post('lastname'));
         $data['middlename'] = cleanit($this->input->post('middlename'));
+        $data['jamb_year'] = cleanit($this->input->post('jamb_year'));
         $data['jamb_reg_no'] = cleanit($this->input->post('jamb_reg_no'));
         $data['jamb_score'] = cleanit($this->input->post('jamb_score'));
         $data['address'] = cleanit($this->input->post('address'));

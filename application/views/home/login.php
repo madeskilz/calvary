@@ -50,7 +50,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="actions">
+                <!-- <div class="actions">
                     <div class="row">
                         <div class="col-xs-6" style="margin-left:auto;">
                             <a class="hlink" href="<?= base_url("apply") ?>">
@@ -64,7 +64,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
