@@ -48,8 +48,9 @@
                     errorMessage += '<div class="alert text-center alert-info">';
                     errorMessage += "Your admission status is ";
                     errorMessage += (response.admission_status === "admitted") ?
-                        response.admission_status + " <a href='<?= base_url('applicant/acceptadmission') ?>'>Click Here to accept admission and proceed to clearance</a>" :
-                        response.admission_status;
+                        `<b>${response.admission_status.charAt(0).toUpperCase()}${response.admission_status.slice(1)}</b>` +
+                        " <a href='<?= base_url('applicant/acceptadmission') ?>'>Click Here to accept admission and proceed to clearance</a>" :
+                        `<b>${response.admission_status.charAt(0).toUpperCase()}${response.admission_status.slice(1)}</b>`;
                     errorMessage += '</div>';
                     $("#resultDiv").html(errorMessage);
                 } else {
@@ -60,8 +61,9 @@
                     errorMessage += '<div class="alert text-center alert-info">';
                     errorMessage += "Your admission status is ";
                     errorMessage += (response.admission_status === "admitted") ?
-                        response.admission_status + " <a href='<?= base_url('applicant/acceptadmission') ?>'>Click Here to accept admission and proceed to clearance</a>" :
-                        response.admission_status;
+                        `<b>${response.admission_status.charAt(0).toUpperCase()}${response.admission_status.slice(1)}</b>` +
+                        " <a href='<?= base_url('applicant/acceptadmission') ?>'>Click Here to accept admission and proceed to clearance</a>" :
+                        `<b>${response.admission_status.charAt(0).toUpperCase()}${response.admission_status.slice(1)}</b>`;
                     errorMessage += '</div>';
                     $("#resultDiv").html(errorMessage);
                 }

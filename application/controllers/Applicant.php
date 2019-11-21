@@ -165,7 +165,7 @@ class Applicant extends CI_Controller
         $this->db->where("code", $prog . "001");
         $pt = $p['payment_type'] = $this->db->get("payment_type")->result();
         $this->db->where("user_id", $uid);
-        $this->db->where("type", $pt->id);
+        $this->db->where("type", $pt[0]->id);
         $p['payments'] = $this->db->get("payments")->result();
         $this->load->view('applicant/payment', $p);
     }

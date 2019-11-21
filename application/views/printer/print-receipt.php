@@ -39,10 +39,10 @@
                 <h2 class="h2 text-center text-uppercase">Calvary Polytechnic</h2>
                 <h5 class="h5" style="text-align:center;">Hospital Road, Owa-oyibo, Ika North East, Delta State, NG</h5>
                 <h4 class="h4 text-center text-uppercase" style="font-weight:700;">Payment Receipt For <?= $pay_type ?></h4>
-                <hr style="border:1px solid #004040;"/>
+                <hr style="border:1px solid #004040;" />
             </div>
             <table class="table" style="border:none;margin-left:50px">
-                <?php if ($table != "applicants") { ?>
+                <?php if ($table != "applicants" && $details->matric_no) { ?>
                     <tr>
                         <td style="width:25%;">
                             <h4 class="h5" style="font-weight:600;">Matric No: </h4>
@@ -85,6 +85,14 @@
                 </tr>
                 <tr>
                     <td>
+                        <h4 class="h5" style="font-weight:600;">Middle Name: </h4>
+                    </td>
+                    <td>
+                        <h4 class="h5" style="font-weight:600;"><?= $details->middlename ?></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <h4 class="h5" style="font-weight:600;">School: </h4>
                     </td>
                     <td>
@@ -101,14 +109,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <h4 class="h5" style="font-weight:600;">Middle Name: </h4>
-                    </td>
-                    <td>
-                        <h4 class="h5" style="font-weight:600;"><?= $details->middlename ?></h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <h4 class="h5" style="font-weight:600;">Payment Type: </h4>
                     </td>
                     <td>
@@ -120,7 +120,7 @@
                         <h4 class="h5" style="font-weight:600;">Amount: </h4>
                     </td>
                     <td>
-                        <h4 class="h5" style="font-weight:600;">&#8358; <?= $payment->amount ?></h4>
+                        <h4 class="h5" style="font-weight:600;"><?= naira($payment->amount) ?></h4>
                     </td>
                 </tr>
                 <tr>
@@ -128,7 +128,7 @@
                         <h4 class="h5" style="font-weight:600;">Charge: </h4>
                     </td>
                     <td>
-                        <h4 class="h5" style="font-weight:600;">&#8358; <?= $payment->charge ?></h4>
+                        <h4 class="h5" style="font-weight:600;"><?= naira($payment->charge) ?></h4>
                     </td>
                 </tr>
                 <tr>
@@ -136,7 +136,7 @@
                         <h4 class="h5" style="font-weight:600;">Total: </h4>
                     </td>
                     <td>
-                        <h4 class="h5" style="font-weight:600;">&#8358; <?= $payment->amount + $payment->charge ?></h4>
+                        <h4 class="h5" style="font-weight:600;"><?= naira($payment->total) ?></h4>
                     </td>
                 </tr>
                 <tr>

@@ -8,6 +8,12 @@ if (!function_exists('get_state')) {
         return $state;
     }
 }
+if (!function_exists('naira')) {
+    function naira($amt)
+    {
+        return "₦ " . number_format((int) $amt, 2, ".", ",");
+    }
+}
 if (!function_exists('get_lga')) {
     function get_lga($id)
     {
@@ -107,7 +113,7 @@ if (!function_exists('isLoggedIn')) {
                     redirect('student');
                 } elseif ($level === '4') {
                     redirect('prospective');
-                }elseif ($level === '5') {
+                } elseif ($level === '5') {
                     redirect('applicant');
                 } elseif ($level === '6') {
                     redirect('burser');

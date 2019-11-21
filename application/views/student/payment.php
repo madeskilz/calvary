@@ -44,7 +44,7 @@
                                             Amount:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->amount, 2, ".", ",") ?>
+                                            <?= naira($type->amount) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -52,7 +52,7 @@
                                             Processing Fee:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->process_charge, 2, ".", ",") ?>
+                                            <?= naira($type->process_charge) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -60,7 +60,7 @@
                                             Total:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->total, 2, ".", ",") ?>
+                                            <?= naira($type->total) ?>
                                         </td>
                                     </tr>
                                 </tbody>

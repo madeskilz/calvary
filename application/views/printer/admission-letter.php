@@ -91,7 +91,7 @@ $no_years = $program->no_years;
                             <li>
                                 <b>Acceptance of offer:</b>
                                 <p>
-                                    This offer will be regarded as accepted by making a payment of &#8358; <?= number_format(10000, 2, ".", ",") ?>. 
+                                    This offer will be regarded as accepted by making a payment of <?= naira(10000) ?>. 
                                     You are to collect a copy of the Students Handbook from the Admission Office after showing the reciept of payment. 
                                 </p>
                             </li>

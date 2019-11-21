@@ -24,7 +24,7 @@
                     </div>
                 <?php }
                 foreach ($payment_type as $type) { ?>
-                    <?php if (($type->code == $prog."002" && !$profile->paid_acceptance_fee) || ($type->code == $sfc && !$profile->paid_school_fee)) { ?>
+                    <?php if (($type->code == $prog . "002" && !$profile->paid_acceptance_fee) || ($type->code == $sfc && !$profile->paid_school_fee)) { ?>
                         <div class="col-md-6" style="margin-bottom:50px;">
                             <table class="table">
                                 <tbody>
@@ -41,7 +41,7 @@
                                             Amount:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->amount, 2, ".", ",") ?>
+                                            <?= naira($type->amount) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -49,7 +49,7 @@
                                             Processing Fee:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->process_charge, 2, ".", ",") ?>
+                                            <?= naira($type->process_charge) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -57,7 +57,7 @@
                                             Total:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->total, 2, ".", ",") ?>
+                                            <?= naira($type->total) ?>
                                         </td>
                                     </tr>
                                 </tbody>

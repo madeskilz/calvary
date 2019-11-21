@@ -31,7 +31,7 @@
                     <?php foreach ($payment_type as $type) $totAm += $type->total; ?>
                     <div class="col-md-12">
                         <p>
-                            This is a payment of a non-refundable fee of &#8358; <?= number_format((int) $totAm, 2, ".", ",") ?> only made on line with verve or master Card (ATM card).
+                            This is a payment of a non-refundable fee of <?= naira($totAm) ?> only made on line with verve or master Card (ATM card).
                         </p>
                     </div>
                     <div class="col-md-6">
@@ -51,7 +51,7 @@
                                             Amount:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->amount, 2, ".", ",") ?>
+                                            <?= naira($type->amount) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -59,7 +59,7 @@
                                             Processing Fee:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->process_charge, 2, ".", ",") ?>
+                                            &#8358; <?= naira($type->process_charge) ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -67,7 +67,7 @@
                                             Total:
                                         </th>
                                         <td>
-                                            &#8358; <?= number_format((int) $type->total, 2, ".", ",") ?>
+                                            &#8358; <?= naira($type->total) ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
