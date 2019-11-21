@@ -79,7 +79,7 @@ $no_years = $program->no_years;
                 </div>
             </div>
             <div class="col-md-12" style="margin-top:20px">
-                <h4 class="text-center" style="text-decoration:underline;">LETTER OF PROVISIONAL ADMISSION</h4>
+                <h5 class="text-center" style="text-decoration:underline;">LETTER OF PROVISIONAL ADMISSION</h5>
                 <p class="text-justify">
                     Further to your participation in our admission screening exercise for the <?= getNextSession() ?> academic session, I am pleased to
                     inform you of the offer of provisional admission to our <b><?= $no_years . "-year" ?><?= ($no_years > 1) ? "s" : "" ?> <?= $program->name . "($program->short)" ?></b>
@@ -98,8 +98,8 @@ $no_years = $program->no_years;
                             <li>
                                 <b>Full Payment of School Fees:</b>
                                 <p>
-                                    Full payment of your school fee is a necessity for completing your registration. The full fee for your programme, 
-                                    <b><?= get_department($details->department)->name ?></b> is <b><?=naira($fee->amount)?></b>
+                                    Full payment of your school fee is a necessity for completing your registration. The full fee for your programme,
+                                    <b><?= get_department($details->department)->name ?></b> is <b><?= naira($fee->amount) ?></b>
                                     (excluding payment charges and accommodation fee). For fees details, click "make payments" from the menu. Students are not allowed
                                     resumption privileges until all fees are paid.
                                 </p>
@@ -107,28 +107,34 @@ $no_years = $program->no_years;
                             <li>
                                 <b>Presentation and Authentication of Result:</b>
                                 <p>
-                                    Presentation and verification of your SSCE/NECO Certificate/Statement of Result is a compulsory 
-                                    condition for registration and matriculation as a student of the Polytechnic. The result details 
-                                    must fulfill the general and specific requirements for admission into the programme for which you 
+                                    Presentation and verification of your SSCE/NECO Certificate/Statement of Result is a compulsory
+                                    condition for registration and matriculation as a student of the Polytechnic. The result details
+                                    must fulfill the general and specific requirements for admission into the programme for which you
                                     are being admitted.
                                 </p>
                             </li>
                             <li>
                                 <b>Meet Jamb Requirements:</b>
                                 <p>
-                                    Submission of a valid <?=explode("/",getNextSession())[0]?> UTME Notification of Result Slip obtained 
-                                    from the Joint Admission and Matriculation Board (JAMB) is a mandatory pre-requisite for registration 
-                                    as a student. You are to also select Calvary Polytechnic as your First Choice Institution on JAMB's 
-                                    CAPS, and print out JAMB's Admission Letter which should be submitted at the Admission Office. 
+                                    Submission of a valid <?= explode("/", getNextSession())[0] ?> UTME Notification of Result Slip obtained
+                                    from the Joint Admission and Matriculation Board (JAMB) is a mandatory pre-requisite for registration
+                                    as a student. You are to also select Calvary Polytechnic as your First Choice Institution on JAMB's
+                                    CAPS, and print out JAMB's Admission Letter which should be submitted at the Admission Office.
                                 </p>
                             </li>
                             <li>
                                 <b>Medical Test:</b>
                                 <p>
-                                    
+                                    Submission of a Certificate of Medical Fitness issued by Calvary Polytechnic Health Centre is not negotiable.
+                                    Candidates who fail the medical test expectation of the Polytechnic will have their admission offer revoked
+                                    as the case may be.
                                 </p>
                             </li>
                         </ol>
+                    </p>
+                    <p class="text-justify">
+                        The Polytechnic Management looks forward to receiving you. <br/>
+                        Congratulations and best wishes.
                     </p>
                     <p class="text-justify"><img src="<?= base_url() . "sitefiles/registrar/reg_sig.png" ?>" style="width:120px;" /></p>
                     <p class="text-justify" style="margin-top:-10px;">
