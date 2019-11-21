@@ -133,6 +133,11 @@ class Printer extends CI_Controller
         $p['title'] = "Admission Letter $ad";
         $this->db->where("user_id", $uid);
         $det = $p['details'] = $this->db->get("prospective_students", 1)->row();
+        $this->db->where("id", $det->department);
+        $prog = $p['prog'] = $this->db->get("departments", 1)->row()->program;
+        $n = ($det->department == 4) ? "003" : "004";
+        $this->db->where("code", $prog . $n);
+        $p["fee"] = $this->db->get("payment_type",1)->row();
         if(!$det->paid_acceptance_fee){
             $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
             return redirect($_SERVER['HTTP_REFERER']);

@@ -11,7 +11,7 @@ if (!function_exists('get_state')) {
 if (!function_exists('naira')) {
     function naira($amt)
     {
-        return "₦ " . number_format((int) $amt, 2, ".", ",");
+        return "₦" . number_format((int) $amt, 2, ".", ",");
     }
 }
 if (!function_exists('get_lga')) {

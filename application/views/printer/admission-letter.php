@@ -64,18 +64,18 @@ $no_years = $program->no_years;
                         <img src="<?= base_url("inassets/images/logo_fav.png") ?>" style="width:80px;height:80px" />
                     </a>
                 </h2>
-                <h2 class="h2 text-center text-uppercase">Calvary Polytechnic, Owa-Oyibu</h2>
+                <h2 class="h2 text-center text-uppercase">Calvary Polytechnic, Owa-Oyibo</h2>
                 <h5 class="h5" style="text-align:center;">Hospital Road, Owa-oyibo, Ika North East, Delta State, NG</h5>
                 <h4 class="h4 text-center text-uppercase" style="font-weight:700;">Office of the Registrar</h4>
                 <hr style="border:1px solid #004040;" />
             </div>
             <div class="col-md-12 row addressing">
                 <div class="col-md-6">
-                    <h5>Dear <?= "$details->lastname," ?></h5>
+                    <h6>Dear <?= "$details->lastname $details->firstname," ?></h6>
                 </div>
                 <div class="col-md-6 text-right">
                     <p><b>Our Reference:</b> <?= $details->admission_no ?></p>
-                    <p><b>Date:</b> <?= date("M d, Y.") ?></p>
+                    <p><b>Date:</b> <?= date("d, M. Y.") ?></p>
                 </div>
             </div>
             <div class="col-md-12" style="margin-top:20px">
@@ -83,29 +83,46 @@ $no_years = $program->no_years;
                 <p class="text-justify">
                     Further to your participation in our admission screening exercise for the <?= getNextSession() ?> academic session, I am pleased to
                     inform you of the offer of provisional admission to our <b><?= $no_years . "-year" ?><?= ($no_years > 1) ? "s" : "" ?> <?= $program->name . "($program->short)" ?></b>
-                    programme in <b>
-                        <?= get_department($details->department)->name ?>, School of <?= get_school(get_department($details->department)->school_id)->name ?>.</b>
+                    programme in <b><?= get_department($details->department)->name ?>,
+                        School of <?= get_school(get_department($details->department)->school_id)->name ?>.</b>
                     <p class="text-justify">
                         In order to realize this offer, you are expected to fulfill the enrollment requirements:
-                        <ol type="i" style="padding-inline-start: 15px;font-weight:bold;">
+                        <ol type="i" style="padding-inline-start: 15px;font-weight:500;text-align:justify">
                             <li>
-                                <b>Acceptance of offer:</b>
+                                <b>Acceptance of Offer:</b>
                                 <p>
-                                    This offer will be regarded as accepted by making a payment of <?= naira(10000) ?>. 
-                                    You are to collect a copy of the Students Handbook from the Admission Office after showing the reciept of payment. 
+                                    This offer will be regarded as accepted by making a payment of <?= naira(10000) ?>.
+                                    You are to collect a copy of the Students Handbook from the Admission Office after showing the receipt of payment.
                                 </p>
                             </li>
                             <li>
                                 <b>Full Payment of School Fees:</b>
                                 <p>
-                                    Full payment of your school fee is a necessity for completing your registration. The full fee for your program
+                                    Full payment of your school fee is a necessity for completing your registration. The full fee for your programme, 
+                                    <b><?= get_department($details->department)->name ?></b> is <b><?=naira($fee->amount)?></b>
+                                    (excluding payment charges and accommodation fee). For fees details, click "make payments" from the menu. Students are not allowed
+                                    resumption privileges until all fees are paid.
+                                </p>
+                            </li>
+                            <li>
+                                <b>Presentation and Authentication of Result:</b>
+                                <p>
+                                    Presentation and verification of your SSCE/NECO Certificate/Statement of Result is a compulsory 
+                                    condition for registration and matriculation as a student of the Polytechnic. The result details 
+                                    must fulfill the general and specific requirements for admission into the programme for which you 
+                                    are being admitted.
                                 </p>
                             </li>
                         </ol>
                     </p>
                     <p class="text-justify"><img src="<?= base_url() . "sitefiles/registrar/reg_sig.png" ?>" style="width:120px;" /></p>
-                    <p class="text-justify">Wande Akindiose</p>
-                    <p class="text-justify">The Registrar</p>
+                    <p class="text-justify" style="margin-top:-10px;">
+                        <b>Mr. Blessed Lawrence Nkemka<br />
+                            Registrar, Calvary Polytechnic </b> <br />
+                        09062537878 <br />
+                        registrar@calvarypoly.edu.ng <br />
+                        calvarypoly@gmail.com
+                    </p>
             </div>
         </div>
     </div>
