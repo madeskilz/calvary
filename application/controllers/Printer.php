@@ -75,13 +75,17 @@ class Printer extends CI_Controller
     {
         $user_id = simple_crypt($ad, "d");
         $uid = $this->session->userdata("user_id");
+        $this->db->where("user_id", $uid);
+        $p['details'] = $det = $this->db->get("applicants", 1)->row();
         if ($user_id != $uid) {
             $this->session->set_flashdata('error_msg', "User not found");
             return redirect($_SERVER['HTTP_REFERER']);
         }
+        if(!$det->paid_application_fee && !$det->confirm_details){
+            $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
         $p['title'] = "Application Form $ad";
-        $this->db->where("user_id", $uid);
-        $p['details'] = $this->db->get("applicants", 1)->row();
         $this->load->view('printer/application-form', $p);
     }
     public function admissionSlip($ad = "")
@@ -94,7 +98,11 @@ class Printer extends CI_Controller
         }
         $p['title'] = "Admission Slip $ad";
         $this->db->where("user_id", $uid);
-        $p['details'] = $this->db->get("prospective_students", 1)->row();
+        $det = $p['details'] = $this->db->get("prospective_students", 1)->row();
+        if(!$det->paid_acceptance_fee){
+            $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
         $this->load->view('printer/admission-slip', $p);
     }
     public function acceptLetter($ad = "")
@@ -107,7 +115,11 @@ class Printer extends CI_Controller
         }
         $p['title'] = "Acceptance Letter $ad";
         $this->db->where("user_id", $uid);
-        $p['details'] = $this->db->get("prospective_students", 1)->row();
+        $det = $p['details'] = $this->db->get("prospective_students", 1)->row();
+        if(!$det->paid_acceptance_fee){
+            $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
         $this->load->view('printer/accept-letter', $p);
     }
     public function admissionLetter($ad = "")
@@ -120,7 +132,11 @@ class Printer extends CI_Controller
         }
         $p['title'] = "Admission Letter $ad";
         $this->db->where("user_id", $uid);
-        $p['details'] = $this->db->get("prospective_students", 1)->row();
+        $det = $p['details'] = $this->db->get("prospective_students", 1)->row();
+        if(!$det->paid_acceptance_fee){
+            $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
         $this->load->view('printer/admission-letter', $p);
     }
     public function clearanceForm($ad = "")
@@ -135,7 +151,11 @@ class Printer extends CI_Controller
         $this->db->where("user_id", $uid);
         $p['olevel'] =  $this->db->get("exam")->result();
         $this->db->where("user_id", $uid);
-        $p['details'] = $this->db->get("prospective_students", 1)->row();
+        $det = $p['details'] = $this->db->get("prospective_students", 1)->row();
+        if(!$det->paid_acceptance_fee){
+            $this->session->set_flashdata('error_msg', "Please make all neccessary payments");
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
         $this->load->view('printer/clearance-form', $p);
     }
 }
