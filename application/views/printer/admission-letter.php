@@ -133,13 +133,15 @@ $no_years = $program->no_years;
                         </ol>
                     </p>
                     <p class="text-justify">
-                        The Polytechnic Management looks forward to receiving you. <br/>
+                        The Polytechnic Management looks forward to receiving you. <br />
                         Congratulations and best wishes.
                     </p>
                     <p class="text-justify"><img src="<?= base_url() . "sitefiles/registrar/reg_sig.png" ?>" style="width:120px;" /></p>
                     <p class="text-justify" style="margin-top:-10px;">
-                        <b>Mr. Blessed Lawrence Nkemka<br />
-                            Registrar, Calvary Polytechnic </b> <br />
+                        <b>
+                            Mr. Blessed Lawrence Nkemka<br />
+                            Registrar, Calvary Polytechnic
+                        </b> <br />
                         09062537878 <br />
                         registrar@calvarypoly.edu.ng <br />
                         calvarypoly@gmail.com
