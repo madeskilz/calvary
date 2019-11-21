@@ -113,6 +113,21 @@ $no_years = $program->no_years;
                                     are being admitted.
                                 </p>
                             </li>
+                            <li>
+                                <b>Meet Jamb Requirements:</b>
+                                <p>
+                                    Submission of a valid <?=explode("/",getNextSession())[0]?> UTME Notification of Result Slip obtained 
+                                    from the Joint Admission and Matriculation Board (JAMB) is a mandatory pre-requisite for registration 
+                                    as a student. You are to also select Calvary Polytechnic as your First Choice Institution on JAMB's 
+                                    CAPS, and print out JAMB's Admission Letter which should be submitted at the Admission Office. 
+                                </p>
+                            </li>
+                            <li>
+                                <b>Medical Test:</b>
+                                <p>
+                                    
+                                </p>
+                            </li>
                         </ol>
                     </p>
                     <p class="text-justify"><img src="<?= base_url() . "sitefiles/registrar/reg_sig.png" ?>" style="width:120px;" /></p>
