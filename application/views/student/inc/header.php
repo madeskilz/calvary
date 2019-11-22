@@ -61,6 +61,13 @@
                 </div>
             </div>
         </nav>
+        <?php
+
+        $uid = $this->session->userdata("user_id");
+        $this->db->where("user_id", $uid);
+        $level = $this->db->get("student_level", 1)->row();
+        ?>
+
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -79,7 +86,9 @@
                                 <a href="<?= base_url("student/password") ?>" class="nav-link"><i class="icon-lock"></i> <span>Change Password</span></a>
                             </li>
                             <li style="margin:auto" class="nav-item <?= ($active == "profile") ? "active" : "" ?>">
-                                <a href="<?= base_url("student/profile") ?>" class="nav-link"><i class="icon-user"></i> <span>My Profile</span></a>
+                                <a href="<?= base_url("student/profile") ?>" class="nav-link"><i class="icon-user"></i> <span>My Profile
+                                        <p class="badge badge-info bg-info text-white"><?= getStudentLevel($level->current_level) ?></p>
+                                    </span></a>
                             </li>
                         </ul>
                     </div>

@@ -53,12 +53,21 @@ class Student extends CI_Controller
         $p['level'] = $this->db->get("student_level", 1)->row();
         $this->db->where("id", $p['profile']->department);
         $p['school'] = get_school($this->db->get("departments", 1)->row()->school_id);
-        if ($action == "register") {
-            $p["title"] = "Register Course";
-            $this->load->view('student/register-course', $p);
-        } else {
-            $p["title"] = "My Courses";
-            $this->load->view('student/course', $p);
+        switch ($action) {
+            case "register":
+                $p["title"] = "Register Course";
+                return $this->load->view('student/register-course', $p);
+            case "print":
+                $act = $this->uri->segment(4);
+                switch ($act) {
+                    case "exam-clearance":
+                        return redirect("printer/examClearance");
+                    default:
+                        return redirect("printer/courseForm");
+                }
+            default:
+                $p["title"] = "My Courses";
+                return $this->load->view('student/course', $p);
         }
     }
     public function password()

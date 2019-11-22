@@ -1,7 +1,7 @@
 <?php $this->load->view("student/inc/header") ?>
 <style>
     .cnav a {
-        color: #437ac7;
+        color: #206363;
     }
 </style>
 <div id="main-content">
@@ -25,18 +25,30 @@
                     </small>
                 </span>
                 <div class="col-md-12 row text-center cnav" style="margin-top:40px;">
-                    <div class="col-md-3 col-xs-6"><a href="<?= base_url("student/course/register") ?>"><i class="fa-3x fa fa-book "></i>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="<?= base_url("student/course/register") ?>">
+                            <i class="fa-3x fa fa-book "></i>
                             <h5>Register Courses</h5>
-                        </a></div>
-                    <div class="col-md-3 col-xs-6"><a href="<?= base_url("student/course/update") ?>"><i class="fa-3x fa fa-list"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="<?= base_url("student/course/update") ?>">
+                            <i class="fa-3x fa fa-list"></i>
                             <h5>Update Course List</h5>
-                        </a></div>
-                    <div class="col-md-3 col-xs-6"><a href="<?= base_url("student/course/print/course-form") ?>"><i class="fa-3x fa fa-print"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="<?= base_url("student/course/print/course-form") ?>">
+                            <i class="fa-3x fa fa-print"></i>
                             <h5>Print <?= getStudentLevel($level->current_level) ?> Course Form</h5>
-                        </a></div>
-                    <div class="col-md-3 col-xs-6"><a href="<?= base_url("student/course/print/exam-clearance") ?>"><i class="fa-3x fa fa-print"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <a href="<?= base_url("student/course/print/exam-clearance") ?>">
+                            <i class="fa-3x fa fa-print"></i>
                             <h5>Print Exam Clearance</h5>
-                        </a></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
